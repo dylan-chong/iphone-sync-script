@@ -1,20 +1,20 @@
-function phone-music-update() {
+function iphone-music-update() {
     if [ "$1" == "-k" ]; then
         echo "-k passed: Killing Finder"
         killall Finder
     fi
 
     echo 'Trimming playlist'
-    phone-sync-once &
+    iphone-sync-once &
     bash -c "cd /Users/Dylan/Dropbox/Programming/GitHub/itunes-applescripts/ && npm run gulp -- be --no-dry-run -s remove-recent"
-    phone-sync
+    iphone-sync
 }
 
-function phone-sync() {
+function iphone-sync() {
     echo 'Starting phone sync'
 
     for ((i=0;i<100;i++)) do
-        timeout 10 osascript ~/bin/phone-sync.applescript
+        iphone-sync-once
         if [ "$?" -eq 0 ]; then
             echo 'Sync started'
             break
@@ -25,6 +25,6 @@ function phone-sync() {
     done
 }
 
-function phone-sync-once() {
-    timeout 10 osascript ~/bin/phone-sync.applescript
- }
+function iphone-sync-once() {
+    timeout 10 osascript /Users/Dylan/Dropbox/Programming/GitHub/iphone-sync-script/iphone-sync.applescript
+}

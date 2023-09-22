@@ -1,0 +1,4 @@
+#!/bin/bash
+source /Users/Dylan/Dropbox/Programming/GitHub/iphone-sync-script/iphone-sync-source.bash
+
+iphone-music-update -k
