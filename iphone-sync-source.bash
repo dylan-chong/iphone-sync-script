@@ -26,5 +26,6 @@ function iphone-sync() {
 }
 
 function iphone-sync-once() {
+    # Requires: brew install coreutils
     timeout 10 osascript /Users/Dylan/Dropbox/Programming/GitHub/iphone-sync-script/iphone-sync.applescript
 }
