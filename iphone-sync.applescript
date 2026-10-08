@@ -1,4 +1,4 @@
-set phoneName to "Dylan's iPhone SE 2"
+set phoneName to "Dylan's iPhone"
 # TODO don't hardcode name
 
 tell application "Finder" to open ("/" as POSIX file)
